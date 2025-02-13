@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hello from LeadOrbit</h1>
+	<ul>
+		{% for lead in leads %}
+			<li> <a href="{% url 'leads:lead-details' lead.pk %}"> {{ lead }} </a> </li>
+		{% endfor %}
+	</ul>
+	<a href="{% url 'leads:lead-create' %}"> Create a lead </a>
+{% endblock content %}
